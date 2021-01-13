@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate.ejs') %> <% var error_symbol=['(≥o≤)', '(;-;)' ,
+'(·_·)' , '(˚Δ˚)' , '(^_^)' , '(*_*)' , '(^-^)' , '(>_<)' ] %> <% var
+x=Math.floor(Math.random() * error_symbol.length) %>
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading text-center">
+        <span class="display-4 text-danger text-break text-wrap">
+          <% if(err.name=='CastError' ){ %> The campground you're trying to find
+          does not exist <% }else{ %> <%- err.message %> <% } %>
+        </span>
+      </h4>
+      <p class="display-6 text-center mt-3 text-wrap text-break">
+        Error <%- err.status %>
+      </p>
+      <hr />
+      <p
+        class="text-center text-wrap text-break"
+        style="color: rgba(128, 128, 128, 0.596); font-size: 100px"
+      >
+        <%- error_symbol[x] %>
+      </p>
+      <hr />
+      <p class="text-wrap text-break"><%- err.stack %></p>
+    </div>
+  </div>
+</div>

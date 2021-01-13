@@ -1,0 +1,70 @@
+<% layout('layouts/boilerplate.ejs') %> <% var randomImg = Math.floor(Math.random() * campgrounds.length) %>
+<header class="banner" style="background-image: url('<%= campgrounds[randomImg].image %>')">
+  <div class="banner__contents">
+    <h1 class="banner__title user-select-none"><%= campgrounds[randomImg].title %></h1>
+    <div class="banner__buttons">
+      <a href="/campgrounds/<%= campgrounds[randomImg]._id %> " class="btn btn-info">View Campground</a>
+    </div>
+  </div>
+</header>
+<div>
+  <h1 class="text-center user-select-none" style="font-family: 'Shadows Into Light', cursive; border-bottom: 1px dotted white">Campgrounds</h1>
+</div>
+<div>
+  <% for(let x = 0; x < campgrounds.length; x++) { %> <% if(x === 0){ %>
+  <div class="row">
+    <div class="col-lg-4 col-md-12 col-sm-12 mt-4 mt-5">
+      <div class="card main__card">
+        <img src="<%- campgrounds[x]["image"] %>" alt="<%- campgrounds[x]["title"]; %>" class="card-img-top card__img">
+        <div class="card-body card__body" style="background: url('<%= campgrounds[x].image %>')">
+          <div class="overlay">
+            <div class="card-title mainCard__title user-select-none">
+              <h1 class="text-center display-6 text-wrap text-break text-dark"><%- campgrounds[x]["title"].toUpperCase(); %></h1>
+              <p class="text-dark text-center smol__p"><%- campgrounds[x]['location'] %></p>
+              <a href="/campgrounds/<%= campgrounds[x]._id %>" class="btn btn-primary text-center" style="font-family: 'Chelsea Market', cursive"
+                >More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %> <% if(x % 3 !== 0 && x !== 0) { %>
+    <div class="col-lg-4 col-md-12 col-sm-12 mt-4 mt-5">
+      <div class="card main__card">
+        <img src="<%- campgrounds[x]["image"] %>" alt="<%- campgrounds[x]["title"]; %>" class="card-img-top card__img">
+        <div class="card-body card__body" style="background: url('<%= campgrounds[x].image %>')">
+          <div class="overlay">
+            <div class="card-title mainCard__title user-select-none">
+              <h1 class="text-center display-6 text-wrap text-break text-dark"><%- campgrounds[x]["title"].toUpperCase(); %></h1>
+              <p class="text-dark text-center smol__p"><%- campgrounds[x]['location'] %></p>
+              <a href="/campgrounds/<%= campgrounds[x]._id %>" class="btn btn-primary text-center" style="font-family: 'Chelsea Market', cursive"
+                >More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %> <% if (x % 3 === 0 && x !== 0) { %>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-12 col-sm-12 mt-4 mt-5">
+      <div class="card main__card">
+        <img src="<%- campgrounds[x]["image"] %>" alt="<%- campgrounds[x]["title"]; %>" class="card-img-top card__img">
+        <div class="card-body card__body" style="background: url('<%= campgrounds[x].image %>')">
+          <div class="overlay">
+            <div class="card-title mainCard__title user-select-none">
+              <h1 class="text-center display-6 text-wrap text-break text-dark"><%- campgrounds[x]["title"].toUpperCase(); %></h1>
+              <p class="text-dark text-center smol__p"><%- campgrounds[x]['location'] %></p>
+              <a href="/campgrounds/<%= campgrounds[x]._id %>" class="btn btn-primary text-center" style="font-family: 'Chelsea Market', cursive"
+                >More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %> <% } %>
+  </div>
+</div>

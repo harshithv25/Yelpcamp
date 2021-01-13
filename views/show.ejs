@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate.ejs') %>
+<div class="row">
+  <div class="show col-lg-8 col-md-12 col-sm-12 mb-5">
+    <h1 class="show__title text-dark text-wrap text-break"><%= moreCamp.title %></h1>
+    <img src="<%= moreCamp.image %>" alt="" class="show__img" />
+    <p class="show__location text-dark text-wrap text-break"><%= moreCamp.location %></p>
+    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center show__flex">
+      <p class="show__desc text-dark text-wrap text-break"><%= moreCamp.description %></p>
+      <p class="show__price">$ <%= moreCamp.price %>/night</p>
+    </div>
+    <hr />
+    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center show__btns">
+      <div class="m-2 mt-0 mb-3 text-break ml-0">
+        <a href="/campgrounds/<%= moreCamp._id %>/edit" class="btn btn-success">Edit the Campground</a>
+      </div>
+      <div class="m-2 mt-0 mb-3 text-break">
+        <form action="/campgrounds/<%= moreCamp._id %>?_method=DELETE" method="POST">
+          <button class="btn btn-danger">Delete Campground</button>
+        </form>
+      </div>
+      <div class="m-2 mt-0 mb-3 text-break">
+        <a href="/campgrounds" class="btn btn-primary">All Campgrounds</a>
+      </div>
+    </div>
+    <div class="card-footer text-muted text-center">2 Days Ago</div>
+  </div>
+  <div class="col-lg-4 col-md-12 col-sm-12 mb-5">
+    <div class="review__button">
+      <button class="btn btn-danger text-center text-wrap text-white reviewBtn" style="font-family: 'Langar', cursive; font-size: 20px">
+        Leave a Review
+      </button>
+    </div>
+    <% if (moreCamp.reviews.length <= 0) { %>
+    <div class="review--noContent">
+      <h3 class="text-center text-muted display-6">Be the first one to review this campground</h3>
+    </div>
+    <% } else { %>
+    <div class="reviews">
+      <% for( let x = 0; x < moreCamp.reviews.length; x++ ) { %>
+      <div class="card mb-3" style="box-shadow: 3px 3px 5px rgba(255, 255, 255, 1)">
+        <div class="card-body">
+          <div class="reviews__delete d-flex flex-row justify-content-between align-items-center">
+            <h3 class="card-title reviews__title text-dark text-wrap">Person</h3>
+            <form action="/campgrounds/<%= moreCamp._id %>/reviews/<%= moreCamp.reviews[x]._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </form>
+          </div>
+          <hr />
+          <div class="card-text">
+            <div class="reviews__body text-wrap text-dark text-break"><%= moreCamp.reviews[x].body %></div>
+            <div class="reviews__rating text-muted"><%= moreCamp.reviews[x].rating %>⭐</div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <% } %>
+  </div>
+</div>
+
+<div class="preview">
+  <form
+    action="/campgrounds/<%= moreCamp._id %>/reviews"
+    method="POST"
+    class="mb-3 validate reviewForm"
+    style="background-image: url('<%= moreCamp.image %>')"
+    novalidate
+    title="Rating and Review"
+  >
+    <div class="mb-3 pr-3 pl-3">
+      <label for="rating" class="form-label">Rating</label>
+      <input type="range" class="form-range p-2" min="1" max="5" step=".5" name="review[rating]" id="rating" />
+    </div>
+    <div class="mb-3 pr-3 pl-3">
+      <label for="body" class="form-label">Review</label>
+      <textarea name="review[body]" class="form-control" id="body" cols="30" rows="3" required></textarea>
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Please provide the body of the review.</div>
+    </div>
+    <div class="reviewForm__bottom">
+      <button class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
