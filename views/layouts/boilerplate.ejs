@@ -17,19 +17,41 @@
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
       crossorigin="anonymous"
     ></script>
-    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/navbar-bottom/" />
-    <link rel="stylesheet" href="/styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet" />
-    <script src="/preview.js" defer></script>
-    <title>Yelp-Camp</title>
+    <link
+      rel="canonical"
+      href="https://v5.getbootstrap.com/docs/5.0/examples/navbar-bottom/"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/show.css" />
+    <link rel="stylesheet" href="/css/edit.css" />
+    <link rel="stylesheet" href="/css/error.css" />
+    <link rel="stylesheet" href="/css/newCamp.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <script src="/js/preview.js" defer></script>
+    <title>Yelpcamp</title>
   </head>
 
   <body>
     <%- include('../partials/navbar.ejs') %>
-    <main class="container mt-5 user-select-none"><%- body %></main>
+    <main class="container mt-5"><%- body %></main>
     <%- include('../partials/footer.ejs') %>
 
     <script>
+      const navBar = document.getElementById("main__nav");
+      const menuToggle = () => {
+        const toggleMenu = document.querySelector(".toggle");
+        const menu = document.querySelector(".navbar__collapsed");
+        toggleMenu.classList.toggle("active");
+        menu.classList.toggle("open");
+      };
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          navBar.classList.add("scrolled");
+        } else {
+          navBar.classList.remove("scrolled");
+        }
+      });
       (function () {
         "use strict";
         var forms = document.querySelectorAll(".validate");

@@ -1,0 +1,199 @@
+.show {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  max-width: max-content;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  color: black;
+  z-index: 0;
+}
+
+.show__img {
+  max-height: 500px !important;
+  object-fit: cover !important;
+  user-select: none;
+}
+
+.show__title {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 10px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.show__location {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.show__desc {
+  max-width: max-content !important;
+  font-size: larger;
+  font-weight: 300;
+  margin-left: 10px;
+  flex: 1;
+}
+
+.show__price {
+  font-size: larger;
+  font-weight: 400;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 10px;
+  background-color: black;
+  max-width: max-content;
+  border-radius: 5px;
+  align-items: center;
+  color: yellowgreen;
+}
+
+.show__flex {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  max-width: 800px;
+}
+
+.show__btns button:active,
+.show__btns a:active {
+  color: #f2f2f2 !important;
+  transform: scale(0.95);
+  transition: all 0.3s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale3D(0.9, 0.9, 0.9) translate(-50%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: scale3D(1, 1, 1) translate(-50%, -50%);
+  }
+}
+
+.reviewForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white !important;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
+  font-size: larger;
+  font-weight: 300 !important;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  border-radius: 5px;
+  transition: 0.2s all ease-in;
+}
+
+.reviewForm.open {
+  transform: translate(-50%, -50%);
+  animation: fade 0.2s ease-out;
+}
+
+.preview.open {
+  opacity: 1;
+  pointer-events: all !important;
+}
+
+.reviewForm__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review__button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.review__button button {
+  width: 100% !important;
+  z-index: 0;
+  transition: all 0.3s;
+}
+
+.review__button button:active {
+  color: black !important;
+  transform: scale(0.95);
+  transition: all 0.3s;
+}
+
+.reviews {
+  min-height: 780px;
+  max-height: 780px;
+  overflow-y: scroll;
+  color: black !important;
+  background: transparent;
+  backdrop-filter: blur(25px);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.reviews__delete button:active {
+  transform: scale(0.94);
+  transition: all 0.3s;
+}
+
+.reviews::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews__title {
+  font-weight: 300;
+}
+
+.review--noContent {
+  min-height: 780px;
+  max-height: 780px;
+  overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px) !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.reviews::-webkit-scrollbar {
+  display: none;
+}
+
+.preview {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s all ease-in;
+}
+
+.preview > form {
+  backdrop-filter: blur(20px);
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.preview > form > div {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 7px;
+  backdrop-filter: blur(10px);
+}

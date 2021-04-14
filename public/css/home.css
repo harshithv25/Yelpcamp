@@ -1,0 +1,159 @@
+/*? Banner styles */
+.banner {
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  height: 550px;
+  color: #fff;
+  backdrop-filter: blur(20px);
+  margin-bottom: 50px;
+  object-fit: contain;
+  position: relative;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.banner__title {
+  font-size: 50px;
+  padding-left: 20px;
+  padding-top: 400px;
+  font-weight: 400;
+}
+
+.banner__title > h1 {
+  font-weight: 200;
+  font-size: 50px;
+  width: max-content;
+  border-radius: 15px;
+  padding: 0 10px 0 10px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.banner__buttons {
+  padding-left: 20px;
+  padding-top: 0px;
+}
+
+.banner__buttons > a {
+  cursor: pointer;
+  color: black !important;
+  border: none;
+  font-size: large;
+  font-weight: 400;
+  outline-width: 0;
+  background-image: linear-gradient();
+  background-color: #4158d0;
+  background-image: linear-gradient(45deg, #22ff85 10%, #28c76f 100%);
+  transition: 0.3s all;
+}
+
+.banner__buttons > a:hover {
+  color: black !important;
+  transition: 0.3s all;
+}
+
+.banner__buttons > a:active {
+  color: black !important;
+  transform: scale(0.95);
+  background: #24c76d !important;
+  transition: all 0.3s;
+}
+
+.banner__contents {
+  margin-left: 30px;
+  max-height: 190px;
+}
+
+.banner__description {
+  color: black;
+  padding-left: 50px;
+  max-width: 500px;
+  padding-top: 20px;
+  font-size: 14px !important;
+}
+/*? Banner styles */
+
+/* ................. */
+/* ................. */
+
+/*? Card Styles */
+.main__card {
+  box-shadow: 1px 1px 20px 5px #111 !important;
+}
+
+.mainCard__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Hanalei Fill", cursive;
+}
+
+.card__img {
+  max-height: 275px;
+  max-width: 1000px;
+  background-position: center;
+  object-fit: cover;
+  background-size: cover;
+  border-bottom: 2px solid white;
+  border-radius: 7px;
+}
+
+.card__body {
+  width: 100%;
+  padding: 0 !important;
+  min-height: 230px;
+  max-height: 350px;
+  object-fit: contain;
+  background-size: cover;
+  background-position: center;
+  align-items: center !important;
+  display: flex;
+  border-radius: 7px;
+  justify-content: center;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  width: 100%;
+  border-radius: 5px;
+  min-height: 230px;
+  max-height: 350px;
+  align-items: center;
+}
+/*? Card styles */
+
+/*? Column Styles */
+.cmp__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: calc(100% - 49px);
+}
+
+.cmp__col {
+  display: flex;
+  flex-direction: row;
+}
+/*? Column Styles */

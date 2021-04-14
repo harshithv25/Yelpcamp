@@ -1,0 +1,140 @@
+.main__nav {
+  font-family: "Roboto Mono", cursive;
+  font-weight: 300;
+  border-radius: 3px;
+  background: transparent !important;
+  transition: all 0.5s;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 10px;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main__nav:hover {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s;
+}
+
+.navbar__brand {
+  color: white;
+  font-size: 1.55rem;
+  margin-right: 10px;
+  transition: all 0.2s;
+}
+
+.navbar__brand:hover {
+  color: rgb(226, 226, 226) !important;
+  transition: all 0.2s;
+}
+
+.navbar__collapsed {
+  position: fixed;
+  top: 17px;
+  left: 90%;
+  right: 10%;
+  bottom: 95%;
+  border-radius: 50%;
+  width: 0;
+  z-index: 9;
+  background: rgba(18, 35, 46, 0.5);
+  backdrop-filter: blur(15px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  transition: 0.2s all;
+  opacity: 0;
+}
+
+.navbar__collapsed.open {
+  box-shadow: 1px 1px 20px 5px #111 !important;
+  border-radius: 10px;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  transition: 0.2s all;
+}
+
+.navbar__collapsed > a {
+  color: white;
+  opacity: 1;
+  font-size: 1.4rem;
+  padding: 15px !important;
+  transition: all 0.2s;
+}
+
+.navbar__collapsed > a:hover {
+  color: whitesmoke !important;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.toggle {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background: url("/images/menu.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size: 30px;
+  margin: 7px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s all;
+}
+
+.toggle::before {
+  content: "Menu";
+  background: #fff;
+  position: absolute;
+  right: 45px;
+  text-transform: uppercase;
+  color: #111;
+  letter-spacing: 2px;
+  font-style: 14px;
+  transition: 0.08s all;
+  padding: 2px 5px;
+}
+
+.toggle.active {
+  background: url("/images/close.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size: 25px;
+  transition: 0.08s all;
+}
+
+.toggle.active::before {
+  content: "Exit";
+  background: #fff;
+  position: absolute;
+  right: 45px;
+  text-transform: uppercase;
+  color: #111;
+  letter-spacing: 2px;
+  font-style: 14px;
+  padding: 2px 5px;
+  transition: 0.2s all;
+}
+
+.scrolled {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s;
+}
