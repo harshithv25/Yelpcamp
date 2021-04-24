@@ -11,6 +11,7 @@ const AppErr = require("./utils/errClass");
 // const campgroundRoutes = require('./routes/campgrounds');
 // const reviewsRoutes = require('./routes/reviews');
 const { campgroundSchema, reviewSchema } = require("./schemas");
+const PORT = process.env.PORT || 5555;
 
 mongoose.connect("mongodb://localhost:27017/Yelpcamp", {
   useNewUrlParser: true,
@@ -161,6 +162,6 @@ app.use((err, req, res, next) => {
   res.status(status).render("error", { err });
 });
 
-app.listen(5555, () => {
-  console.log("Server Started.....");
+app.listen(PORT, () => {
+  console.log(`Listening on http://localhost:${PORT}/`);
 });

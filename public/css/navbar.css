@@ -1,7 +1,6 @@
 .main__nav {
   font-family: "Roboto Mono", cursive;
   font-weight: 300;
-  border-radius: 3px;
   background: transparent !important;
   transition: all 0.5s;
   position: sticky;
@@ -36,27 +35,26 @@
 
 .navbar__collapsed {
   position: fixed;
-  top: 17px;
-  left: 90%;
-  right: 10%;
-  bottom: 95%;
-  border-radius: 50%;
-  width: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
   z-index: 9;
   background: rgba(18, 35, 46, 0.5);
-  backdrop-filter: blur(15px);
   justify-content: center;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
   display: flex;
   transition: 0.2s all;
-  opacity: 0;
 }
 
 .navbar__collapsed.open {
   box-shadow: 1px 1px 20px 5px #111 !important;
   border-radius: 10px;
+  backdrop-filter: blur(15px);
   opacity: 1;
   top: 0;
   left: 0;

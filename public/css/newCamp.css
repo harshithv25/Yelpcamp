@@ -1,28 +1,34 @@
 .form {
   background: rgba(255, 255, 255, 0.15);
-  /* background: rgba(0, 124, 199, 0.7); */
-  /* background: rgba(77, 168, 218, 0.8); */
   backdrop-filter: blur(25px);
   color: white !important;
   padding: 20px;
+  margin-bottom: 20px !important;
   border-radius: 5px;
   z-index: 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3),
-    inset 0 10px rgba(255, 255, 255, 0.2),
-    inset 0 10px 20px rgba(255, 255, 255, 0.25),
-    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5),
-    inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
-    inset 0 10px 20px rgba(255, 255, 255, 0.25),
-    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5),
-    inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
-    inset 0 10px 20px rgba(255, 255, 255, 0.25),
-    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5),
-    inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
-    inset 0 10px 20px rgba(255, 255, 255, 0.25),
-    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.shriked {
+  color: white;
+}
+
+.page__heading {
+  font-family: "Roboto Mono", monospace !important;
+  font-weight: 300 !important;
+  z-index: 10;
+}
+
+.page__heading > h2 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300 !important;
 }
 
 .form__bottom {

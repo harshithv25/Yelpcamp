@@ -1,48 +1,40 @@
 <% layout('layouts/boilerplate.ejs') %>
 <div class="row">
-  <h1
-    class="text-center text-white mb-5"
-    style="font-family: 'Roboto Mono', monospace; font-weight: 300 !important"
-  >
-    Edit campground
-  </h1>
+  <div class="page__heading">
+    <h2 class="text-center text-white mb-5">Edit campground</h2>
+  </div>
   <div class="col-6 offset-3 form">
-    <form
-      action="/campgrounds/<%= campground._id %>?_method=PUT"
-      method="POST"
-      class="validate"
-      novalidate
-    >
+    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" class="validate" novalidate>
       <div class="mb-3">
         <label class="form-label" for="title">Title</label>
-        <input
-          class="form-control"
-          type="text"
-          id="title"
-          placeholder="eg: Dusty Hollow"
-          name="campgrounds[title]"
-          value="<%= campground.title %>"
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
-        <div class="invalid-feedback">
-          Please provide the name of the Campground.
+        <div class="input-group mb-3">
+          <input
+            class="form-control"
+            type="text"
+            id="title"
+            placeholder="eg: Dusty Hollow"
+            name="campgrounds[title]"
+            value="<%= campground.title %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide the name of the Campground.</div>
         </div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="location">Location</label>
-        <input
-          class="form-control"
-          type="text"
-          id="location"
-          placeholder="eg: Lancaster, Pennsylvania"
-          name="campgrounds[location]"
-          value="<%= campground.location %>"
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
-        <div class="invalid-feedback">
-          Please provide the location of the Campground.
+        <div class="input-group mb-3">
+          <input
+            class="form-control"
+            type="text"
+            id="location"
+            placeholder="eg: Lancaster, Pennsylvania"
+            name="campgrounds[location]"
+            value="<%= campground.location %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide the location of the Campground.</div>
         </div>
       </div>
       <div class="mb-3">
@@ -62,46 +54,29 @@
           />
           <span class="input-group-text">day</span>
           <div class="valid-feedback">Reasonalble!</div>
-          <div class="invalid-feedback">
-            Please provide a valid price for the Campground.
-          </div>
+          <div class="invalid-feedback">Please provide a valid price for the Campground.</div>
         </div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="image">Image Url</label>
-        <input
-          class="form-control"
-          type="text"
-          id="image"
-          name="campgrounds[image]"
-          value="<%= campground.image %>"
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
-        <div class="invalid-feedback">
-          Please provide a valid Image Url for the Campground.
+        <div class="input-group mb-3">
+          <input class="form-control" type="text" id="image" name="campgrounds[image]" value="<%= campground.image %>" required />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide a valid Image Url for the Campground.</div>
         </div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="Description">Description</label>
-        <textarea
-          class="form-control"
-          type="text"
-          id="Description"
-          name="campgrounds[description]"
-          required
-        >
+        <div class="input-group mb-3">
+          <textarea class="form-control" rows="7" type="text" id="Description" name="campgrounds[description]" required>
 <%= campground.description %></textarea
-        >
-        <div class="valid-feedback">Looks good!</div>
-        <div class="invalid-feedback">
-          Please provide a valid Image Url for the Campground.
+          >
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide a valid Image Url for the Campground.</div>
         </div>
       </div>
       <div class="form__bottom">
-        <a href="/campgrounds/<%= campground._id %>" class="btn btn-danger"
-          >Cancel</a
-        >
+        <a href="/campgrounds/<%= campground._id %>" class="btn btn-danger">Cancel</a>
         <button class="btn btn-success form__button">Update campground</button>
       </div>
     </form>

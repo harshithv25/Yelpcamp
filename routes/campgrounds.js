@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Campground = require("./models/camground");
 
 router.get(
   "/",
